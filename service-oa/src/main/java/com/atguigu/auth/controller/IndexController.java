@@ -17,7 +17,7 @@ public class IndexController {
 
     @PostMapping("/login")
     public Result<Map<String,Object>> login(){
-        System.out.println("hello git")
+        System.out.println("hello git");
         Map<String,Object> map = new HashMap<>();
         map.put("token", "admin-token");
         map.put("avatar","https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg");
