@@ -6,7 +6,6 @@ import com.atguigu.model.system.SysUser;
 import com.atguigu.util.result.Result;
 import com.atguigu.vo.system.SysUserQueryVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -55,7 +54,7 @@ public class SysUserController {
             wrapper.le(SysUser::getCreateTime,createTimeEnd);
         }
 
-        IPage<SysUser> pageModel = sysUserService.page(pageParam, wrapper);
+        sysUserService.page(pageParam, wrapper);
 
         return Result.ok(pageParam);
     }
@@ -93,7 +92,6 @@ public class SysUserController {
     @GetMapping("/update/{id}/{status}")
     public Result<Object> updateStatus(@PathVariable Long id,@PathVariable int status){
         sysUserService.updateStatus(id,status);
-        System.out.println("hello git");
         return Result.ok();
     }
 
