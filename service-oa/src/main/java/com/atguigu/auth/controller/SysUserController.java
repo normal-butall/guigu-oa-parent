@@ -93,6 +93,7 @@ public class SysUserController {
     @GetMapping("/update/{id}/{status}")
     public Result<Object> updateStatus(@PathVariable Long id,@PathVariable int status){
         sysUserService.updateStatus(id,status);
+        System.out.println("hello git");
         return Result.ok();
     }
 
